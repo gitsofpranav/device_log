@@ -210,3 +210,9 @@ def process_telemetry(
         print(f"[INFO] Summary successfully saved to: {output_json_path}")
 
     return aggregated
+
+
+if __name__ == "__main__":
+    csv_file = sys.argv[1] if len(sys.argv) > 1 else "device_telemetry.csv"
+    out_file = sys.argv[2] if len(sys.argv) > 2 else "output/summary.json"
+    process_telemetry(csv_file, out_file)
